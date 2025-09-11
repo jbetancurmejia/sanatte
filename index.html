@@ -1,514 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanatte: Un Santuario para tu Bienestar</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --color-crema-rosado: #F9F5F3;
-            --color-green: #A8C3A0;
-            --color-pink: #E8B7C8;
-            --color-lavender: #C7BCE2;
-            --color-light-lavender: #EAE6F0;
-            --color-blue: #AFC7D8;
-            --color-text: #333333;
-            --font-title: 'Cormorant Garamond', serif;
-            --font-subtitle: 'Lora', serif;
-            --font-body: 'Montserrat', sans-serif;
-        }
-
-        /* Base Styles & Typography */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--color-text);
-            background-color: var(--color-light-lavender);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-title);
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--color-text);
-        }
-
-        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
-        h2 { font-size: clamp(2rem, 5vw, 3rem); }
-        h3 { font-size: 1.5rem; }
-        p { font-size: 1rem; }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--color-lavender);
-            color: var(--color-text);
-            border: 2px solid var(--color-lavender);
-            font-family: var(--font-subtitle);
-            padding: 0.8rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: var(--color-green);
-            border-color: var(--color-green);
-            color: #fff;
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(249, 245, 243, 0.9);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar-brand {
-            font-family: var(--font-title);
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--color-text);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--color-text);
-            font-family: var(--font-subtitle);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--color-lavender);
-        }
-
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            font-size: 1.5rem;
-            color: var(--color-text);
-        }
-
-        /* Hero Section */
-        #hero {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            background-color: var(--color-light-lavender);
-            background-image: url('https://images.unsplash.com/photo-1533422902779-aff35862e462?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
-            padding: 0 1rem;
-            padding-top: 80px;
-            color: #fff;
-        }
-
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(199, 188, 226, 0.3);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            background-color: rgba(255, 255, 255, 0.75);
-            padding: 3rem 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-            color: var(--color-text);
-        }
-
-        .hero-content h1 { color: var(--color-text); margin-bottom: 0.5rem; }
-        .hero-content h2 { font-family: var(--font-subtitle); font-weight: 400; margin-bottom: 2rem; color: var(--color-text); }
-        .hero-content .cta-button {
-             background-color: var(--color-lavender);
-             border-color: var(--color-lavender);
-             color: var(--color-text);
-        }
-        .hero-content .cta-button:hover {
-            background-color: var(--color-green);
-            border-color: var(--color-green);
-            color: #fff;
-        }
-        
-        /* New about sections (alternating image & text) */
-        .about-section {
-            padding: 6rem 0;
-        }
-        
-        .about-section-inner { /* Nuevo contenedor para el contenido centrado */
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            max-width: 1200px; /* Misma medida que .container */
-            margin: 0 auto; /* Centrar el contenido */
-            padding: 0 1rem; /* Padding para evitar que el contenido toque los bordes */
-        }
-
-        .about-section.reverse .about-section-inner {
-            flex-direction: row-reverse;
-        }
-
-        .about-section-text {
-            flex: 1;
-            padding: 0; /* Ya no es necesario padding aquí */
-        }
-        
-        .about-section-text h2 {
-            margin-bottom: 1rem;
-        }
-
-        .about-section-image {
-            flex: 1;
-            padding: 0;
-        }
-
-        .about-section-image img {
-            width: 100%;
-            height: 500px; 
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Color backgrounds for new sections */
-        #esencia { background-color: var(--color-crema-rosado); }
-        #crecimiento { background-color: var(--color-light-lavender); }
-        #habitos { background-color: var(--color-crema-rosado); }
-
-        /* Other sections below */
-        #universe {
-            background-color: var(--color-light-lavender);
-            padding: 6rem 0;
-            text-align: center;
-        }
-        
-        .universe-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .universe-content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            margin-top: 2rem;
-        }
-
-        #testimonials {
-            background-color: var(--color-lavender);
-            color: #fff;
-            padding: 6rem 0;
-            text-align: center;
-        }
-        
-        #testimonials h2 {
-            color: #fff;
-        }
-
-        .testimonial-carousel {
-            max-width: 700px;
-            margin: 2rem auto;
-            font-family: var(--font-subtitle);
-            font-size: 1.2rem;
-            font-style: italic;
-        }
-
-        #final-cta {
-            background-color: var(--color-light-lavender);
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        #final-cta .cta-content {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 3rem 2rem;
-            border-radius: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        #final-cta h2, #final-cta p {
-            color: var(--color-text);
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .form-group input {
-            padding: 1rem;
-            border: 1px solid var(--color-lavender);
-            border-radius: 5px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            background-color: var(--color-crema-rosado);
-        }
-
-        .form-group button {
-            background-color: var(--color-lavender);
-            color: var(--color-text);
-            border: none;
-            padding: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        
-        .form-group button:hover {
-            background-color: var(--color-green);
-            color: #fff;
-        }
-
-        /* Estilos para los íconos de redes sociales */
-        .social-icons {
-            margin-top: 2rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-icons a {
-            color: var(--color-lavender); /* Color principal de la marca */
-            font-size: 1.8rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: var(--color-green); /* Color de hover */
-            transform: translateY(-3px);
-        }
-
-        .footer-slogan {
-            font-family: var(--font-subtitle);
-            margin-top: 1.5rem; /* Ajustar margen ya que los iconos están arriba */
-            font-weight: 500;
-            color: var(--color-text);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .navbar {
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-                background-color: rgba(249, 245, 243, 0.9);
-                padding: 1rem 0;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-            
-            #hero {
-                padding-top: 100px;
-            }
-            
-            .about-section-inner {
-                flex-direction: column;
-                text-align: center;
-                padding: 0; 
-            }
-            .about-section.reverse .about-section-inner {
-                flex-direction: column;
-            }
-            .about-section-text {
-                padding: 0 1rem;
-            }
-            .about-section-image {
-                padding: 0;
-                margin-top: 2rem;
-            }
-            .about-section-image img {
-                height: 300px; 
-            }
-            .social-icons {
-                gap: 1rem;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanatte: Un Santuario para tu Bienestar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="#hero" class="navbar-brand">Sanatte</a>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-            <span class="icon">&#9776;</span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="#esencia">Esencia</a></li>
-            <li><a href="#crecimiento">Promesa</a></li>
-            <li><a href="#habitos">Hábitos</a></li>
-            <li><a href="#universe">Universo</a></li>
-            <li><a href="#testimonials">Comunidad</a></li>
-            <li><a href="#final-cta">Únete</a></li>
-        </ul>
-    </nav>
+    <nav class="navbar">
+        <a href="#hero" class="navbar-brand">Sanatte</a>
+		<button class="menu-toggle" aria-label="Toggle navigation">
+			<span class="icon">&#9776;</span>
+		</button>
+		<ul class="nav-links">
+			<button class="close-menu" aria-label="Cerrar menú">&times;</button>
+			<li><a href="#esencia">Esencia</a></li>
+			<li><a href="#crecimiento">Promesa</a></li>
+			<li><a href="#habitos">Hábitos</a></li>
+			<li><a href="#universe">Universo</a></li>
+			<li><a href="#testimonials">Comunidad</a></li>
+			<li><a href="#final-cta">Únete</a></li>
+			<li class="nav-social">
+				<div class="social-icons">
+					<a href="https://www.instagram.com/sanatte.co/" target="_blank" rel="noopener" aria-label="Instagram de Sanatte"><i class="fab fa-instagram"></i></a>
+					<a href="#" aria-label="Facebook de Sanatte"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" aria-label="Pinterest de Sanatte"><i class="fab fa-pinterest-p"></i></a>
+				</div>
+			</li>
+		</ul>
+    </nav>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Sanatte: Un Santuario para tu Bienestar</h1>
-            <h2>Servicios y productos premium para el alma que busca la calma.</h2>
-            <a href="#esencia" class="cta-button">Explora nuestra filosofía</a>
-        </div>
-    </section>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Un Santuario para tu Bienestar</h1>
+            <h2>Un espacio para sentir, crecer y florecer.</h2>
+            <a href="#esencia" class="cta-button">Explora nuestra filosofía</a>
+        </div>
+    </section>
 
-    <section id="esencia" class="about-section">
-        <div class="about-section-inner">
-            <div class="about-section-text">
-                <h2>La Esencia de Sanatte</h2>
-                <p>Sanatte es más que una marca, es un estilo de vida. Creamos un santuario donde la tranquilidad y la elegancia se encuentran, ofreciendo herramientas y experiencias pensadas para la mujer moderna que valora el autocuidado como un acto de lujo. Cada producto y servicio está diseñado para nutrir el cuerpo, la mente y el alma, guiándote hacia una vida de mayor conexión y propósito.</p>
-            </div>
-            <div class="about-section-image">
-                 <img src="https://media.istockphoto.com/id/1421420537/photo/peace-relax-and-happy-mindset-of-a-woman-from-indonesia-taking-a-mind-and-meditation-home.jpg?s=2048x2048&w=is&k=20&c=PHmatoOclRRQwnd8Lu0uXSqmoOzfd-eL9qW3q3MOzEc=" alt="Mujer relajándose y meditando.">
-            </div>
-        </div>
-    </section>
-    
-    <section id="crecimiento" class="about-section reverse">
-        <div class="about-section-inner">
-            <div class="about-section-text">
-                <h2>Crecimiento emocional</h2>
-                <p>Nuestras herramientas están diseñadas para ayudarte a la introspección. Descubre la sabiduría que ya habita en ti. Te acompañamos en tu camino hacia una vida de mayor conexión y propósito.</p>
-            </div>
-            <div class="about-section-image">
-                 <img src="https://media.istockphoto.com/id/1421420537/photo/peace-relax-and-happy-mindset-of-a-woman-from-indonesia-taking-a-mind-and-meditation-home.jpg?s=2048x2048&w=is&k=20&c=PHmatoOclRRQwnd8Lu0uXSqmoOzfd-eL9qW3q3MOzEc=" alt="Pilar de crecimiento emocional.">
-            </div>
-        </div>
-    </section>
+    <section id="esencia" class="about-section">
+        <div class="about-section-inner">
+            <div class="about-section-text">
+                <h2>Nuestra Esencia</h2>
+                <p>Somos más que una marca: somos un estilo de vida. Hemos creado un santuario para el bienestar, donde la serenidad y la plenitud se encuentran. A través de nuestras experiencias y productos, impulsamos el cuidado de tu cuerpo, mente y alma, guiándote hacia una vida con mayor equilibrio, conexión y propósito.</p>
+            </div>
+            <div class="about-section-image">
+                 <img src="https://media.istockphoto.com/id/1421420537/photo/peace-relax-and-happy-mindset-of-a-woman-from-indonesia-taking-a-mind-and-meditation-home.jpg?s=2048x2048&w=is&k=20&c=PHmatoOclRRQwnd8Lu0uXSqmoOzfd-eL9qW3q3MOzEc=" alt="Mujer relajándose y meditando.">
+            </div>
+        </div>
+    </section>
+    
+    <section id="crecimiento" class="about-section reverse">
+        <div class="about-section-inner">
+            <div class="about-section-text">
+                <h2>Crecimiento emocional</h2>
+                <p>Nuestras herramientas están diseñadas para ayudarte a la introspección. Descubre la sabiduría que ya habita en ti. Te acompañamos en tu camino hacia una vida de mayor conexión y propósito.</p>
+            </div>
+            <div class="about-section-image">
+                 <img src="https://media.istockphoto.com/id/1421420537/photo/peace-relax-and-happy-mindset-of-a-woman-from-indonesia-taking-a-mind-and-meditation-home.jpg?s=2048x2048&w=is&k=20&c=PHmatoOclRRQwnd8Lu0uXSqmoOzfd-eL9qW3q3MOzEc=" alt="Pilar de crecimiento emocional.">
+            </div>
+        </div>
+    </section>
 
-    <section id="habitos" class="about-section">
-        <div class="about-section-inner">
-            <div class="about-section-text">
-                <h2>Hábitos conscientes</h2>
-                <p>Eleva tu rutina diaria a un ritual. Nuestros productos son pequeños lujos que cuidan de ti. Te ayudamos a crear hábitos saludables y a conectar con tus emociones de manera consciente.</p>
-            </div>
-            <div class="about-section-image">
-                 <img src="https://media.istockphoto.com/id/1421420537/photo/peace-relax-and-happy-mindset-of-a-woman-from-indonesia-taking-a-mind-and-meditation-home.jpg?s=2048x2048&w=is&k=20&c=PHmatoOclRRQwnd8Lu0uXSqmoOzfd-eL9qW3q3MOzEc=" alt="Pilar de hábitos conscientes.">
-            </div>
-        </div>
-    </section>
+    <section id="habitos" class="about-section">
+        <div class="about-section-inner">
+            <div class="about-section-text">
+                <h2>Hábitos conscientes</h2>
+                <p>Eleva tu rutina diaria a un ritual. Nuestros productos son pequeños lujos que cuidan de ti. Te ayudamos a crear hábitos saludables y a conectar con tus emociones de manera consciente.</p>
+            </div>
+            <div class="about-section-image">
+                 <img src="https://media.istockphoto.com/id/1421420537/photo/peace-relax-and-happy-mindset-of-a-woman-from-indonesia-taking-a-mind-and-meditation-home.jpg?s=2048x2048&w=is&k=20&c=PHmatoOclRRQwnd8Lu0uXSqmoOzfd-eL9qW3q3MOzEc=" alt="Pilar de hábitos conscientes.">
+            </div>
+        </div>
+    </section>
 
-    <section id="universe" class="container">
-        <h2>Un universo de calma y sofisticación</h2>
-        <div class="universe-content">
-            <p>Desde **planeadores de lujo** hasta **talleres exclusivos** y **kits de rituales**, cada pieza de Sanatte es una invitación a la pausa y a la conexión contigo misma. Nuestro primer producto, Plena, es el inicio de este viaje.</p>
-            <img src="https://via.placeholder.com/900x600/F9F5F3/333333?text=Composición+de+productos+premium" alt="Fotografía de estudio de productos de Sanatte">
-        </div>
-    </section>
+        <section id="final-cta">
+        <div class="cta-content">
+            <h2>Únete al círculo de bienestar de Sanatte</h2>
+            <p>Recibe acceso exclusivo a nuestra preventa, lanzamientos y contenido inspirador.</p>
+            <form action="#" method="post" class="form-group">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <button type="submit">Suscribirme</button>
+            </form>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/sanatte.co/" target="_blank" rel="noopener" aria-label="Instagram de Sanatte"><i class="fab fa-instagram"></i></a>
+                                            </div>
+            <p class="footer-slogan">Sanatte. Bienestar que empieza en ti.</p>
+        </div>
+    </section>
 
-    <section id="testimonials">
-        <div class="container testimonial-carousel">
-            <h2>La Voz de nuestra comunidad</h2>
-            <p>“Sanatte me ha ayudado a crear espacios de paz en mi día. Es un recordatorio visual de que mi bienestar es una prioridad.” - A.</p>
-        </div>
-    </section>
-
-    <section id="final-cta">
-        <div class="cta-content">
-            <h2>Únete al círculo de bienestar de Sanatte</h2>
-            <p>Recibe acceso exclusivo a nuestra preventa, lanzamientos y contenido inspirador.</p>
-            <form action="#" method="post" class="form-group">
-                <input type="text" name="nombre" placeholder="Nombre" required>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <button type="submit">Suscribirme</button>
-            </form>
-            <div class="social-icons">
-                <a href="#" aria-label="Instagram de Sanatte"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Facebook de Sanatte"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Pinterest de Sanatte"><i class="fab fa-pinterest-p"></i></a>
-            </div>
-            <p class="footer-slogan">Sanatte. Bienestar que empieza en ti.</p>
-        </div>
-    </section>
-
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
