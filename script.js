@@ -1,26 +1,41 @@
-// Sanatte JS - script.js
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+// script.js
+// Configuración de Tailwind personalizada
 
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-}
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#8B5CF6", // Purple from the logo
+        secondary: "#38BDF8", // Blue from the logo
+        "background-light": "#F7F9FC",
+        "background-dark": "#111827",
+        "card-light": "#FFFFFF",
+        "card-dark": "#1F2937",
+        "text-light": "#1F2937",
+        "text-dark": "#E5E7EB",
+        "subtext-light": "#6B7280",
+        "subtext-dark": "#9CA3AF",
+      },
+      fontFamily: {
+        display: ["Poppins", "sans-serif"],
+      },
+      borderRadius: {
+        DEFAULT: "1rem",
+      },
+    },
+  },
+};
 
-// Close menu when clicking a nav link
-if (navLinks) {
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
-    });
-}
+// Menú responsive para dispositivos móviles
 
-// Close menu when clicking the close button
-const closeMenuBtn = document.querySelector('.close-menu');
-if (closeMenuBtn && navLinks) {
-    closeMenuBtn.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+document.addEventListener('DOMContentLoaded', function () {
+  const menuButton = document.querySelector('button.md\\:hidden');
+  const navMenu = document.querySelector('nav.hidden.md\\:flex');
+
+  if (menuButton && navMenu) {
+    menuButton.addEventListener('click', function () {
+      navMenu.classList.toggle('hidden');
     });
-}
+  }
+});
