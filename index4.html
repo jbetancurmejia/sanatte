@@ -1,123 +1,180 @@
 <!DOCTYPE html>
-<html lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sanatte - Un Santuario para tu bienestar</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#8B5CF6", // Purple from the logo
-            secondary: "#38BDF8", // Blue from the logo
-            "background-light": "#F7F9FC",
-            "background-dark": "#111827",
-            "card-light": "#FFFFFF",
-            "card-dark": "#1F2937",
-            "text-light": "#1F2937",
-            "text-dark": "#E5E7EB",
-            "subtext-light": "#6B7280",
-            "subtext-dark": "#9CA3AF",
-          },
-          fontFamily: {
-            display: ["Poppins", "sans-serif"],
-          },
-          borderRadius: {
-            DEFAULT: "1rem",
-          },
-        },
-      },
-    };
-  </script>
-<style>
-    .gradient-text {
-      background: linear-gradient(to right, #38BDF8, #8B5CF6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-  </style>
-</head>
-<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased">
-<div class="overflow-x-hidden">
-<header class="absolute top-0 left-0 right-0 z-10 py-6">
-<div class="container mx-auto px-6 flex justify-between items-center">
-<div class="flex items-center">
-        <img
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sanatte - Un Santuario para tu bienestar</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased"
+  >
+    <div class="overflow-x-hidden">
+      <header class="absolute top-0 left-0 right-0 z-10 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+          <div class="flex items-center">
+            <img
               src="assets/logo/logo.png"
               alt="Logo Sanatte"
               class="mr-2"
               width="120"
             />
-</div>
-<nav class="hidden md:flex space-x-8">
-<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">Nosotros</a>
-<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">Plena</a>
-<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">Regístrate</a>
-</nav>
-<button class="md:hidden">
-<span class="material-icons-outlined">menu</span>
-</button>
-</div>
-</header>
-<main class="relative">
-<section class="relative">
-<div class="absolute inset-0 overflow-hidden">
-<img alt="Serene background image of a person meditating in nature" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI-3bsuqZZo5kC1oO6nnftmgq2qqRMREdIQ5pGsR1TBD5_PUn4SsdScLLKpQeQfBlgK-GLB6lO3oAcvm1DyjGnPJ5SQXhjQePiEuXVXO8cpcyGEVA5MjmvFsmafyZXfFF5MEIZIZ1eOBP_vxeenkATud_qW1SBURgpN6tXfQusu8y0WDdVKZlvEZQS0TTm0DJRg9bjCebvcs9JMzvdyDPhPNjY6Nyfm3HC7jHEpamYg0zqx8Bct6vOe6I6kALrfC24Hniz7MfT3vQ"/>
-<div class="absolute inset-0 bg-gradient-to-br from-secondary/30 via-background-light to-primary/30 dark:from-secondary/50 dark:via-background-dark/60 dark:to-primary/50"></div>
-</div>
-<div class="relative container mx-auto px-6 py-32 md:py-48 text-center">
-<h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-text-light dark:text-text-dark">
-            Un Santuario para tu <span class="gradient-text">bienestar</span>.
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a
+              class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >Servicios</a
+            >
+            <a
+              class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >Nosotros</a
+            >
+            <a
+              class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >Contacto</a
+            >
+          </nav>
+          <button class="md:hidden">
+            <span class="material-icons-outlined">menu</span>
+          </button>
+        </div>
+      </header>
+      <main class="relative">
+        <section class="relative">
+          <div class="absolute inset-0 overflow-hidden">
+            <img
+              alt="Serene background image of a person meditating in nature"
+              class="w-full h-full object-cover"
+              src="assets/images/header.png"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-secondary/30 via-background-light to-primary/30 dark:from-secondary/50 dark:via-background-dark/60 dark:to-primary/50"
+            ></div>
+          </div>
+          <div
+            class="relative container mx-auto px-6 py-32 md:py-48 text-center"
+          >
+            <h1
+              class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-text-light dark:text-text-dark"
+            >
+              Un Santuario para tu <span class="gradient-text">bienestar</span>.
             </h1>
-<p class="max-w-3xl mx-auto text-lg md:text-xl text-subtext-light dark:text-subtext-dark mb-8">
-            Herramientas para sentir, sanar y florecer.
+            <p
+              class="max-w-3xl mx-auto text-lg md:text-xl text-subtext-light dark:text-subtext-dark mb-8"
+            >
+              Herramientas para sentir, sanar y florecer.
             </p>
-<button class="bg-primary text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-primary/30 hover:bg-opacity-90 transition-all transform hover:scale-105">
-            Explora nuestros servicios
+            <button
+              class="bg-primary text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-primary/30 hover:bg-opacity-90 transition-all transform hover:scale-105"
+            >
+              Explora nuestros servicios
             </button>
-</div>
-</section>
-<section class="py-16 md:py-24">
-<div class="container mx-auto px-6">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-<div class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-secondary/10 dark:bg-secondary/20">
-<span class="material-icons-outlined text-3xl text-secondary">
+          </div>
+        </section>
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/10 via-background-light to-primary/10 dark:from-secondary/20 dark:via-background-dark dark:to-primary/20 opacity-50 blur-3xl"
+        ></div>
+        <section
+          class="relative container mx-auto px-6 py-32 md:py-48 text-center"
+        >
+          <h1
+            class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-text-light dark:text-text-dark"
+          >
+            Un Santuario para tu <span class="gradient-text">bienestar</span>.
+          </h1>
+          <p
+            class="max-w-3xl mx-auto text-lg md:text-xl text-subtext-light dark:text-subtext-dark mb-8"
+          >
+            Herramientas para sentir, sanar y florecer.
+          </p>
+          <button
+            class="bg-primary text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-primary/30 hover:bg-opacity-90 transition-all transform hover:scale-105"
+          >
+            Explora nuestros servicios
+          </button>
+        </section>
+        <section class="py-16 md:py-24">
+          <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div
+                class="bg-card-light dark:bg-card-dark p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              >
+                <div
+                  class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-secondary/10 dark:bg-secondary/20"
+                >
+                  <span class="material-icons-outlined text-3xl text-secondary">
                     self_improvement
-                </span>
-</div>
-<h3 class="text-2xl font-semibold mb-3 text-text-light dark:text-text-dark">Sentir</h3>
-<p class="text-subtext-light dark:text-subtext-dark">Conecta con tus emociones y encuentra la calma interior a través de nuestras prácticas guiadas.</p>
-</div>
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-<div class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-primary/10 dark:bg-primary/20">
-<span class="material-icons-outlined text-3xl text-primary">
+                  </span>
+                </div>
+                <h3
+                  class="text-2xl font-semibold mb-3 text-text-light dark:text-text-dark"
+                >
+                  Sentir
+                </h3>
+                <p class="text-subtext-light dark:text-subtext-dark">
+                  Conecta con tus emociones y encuentra la calma interior a
+                  través de nuestras prácticas guiadas.
+                </p>
+              </div>
+              <div
+                class="bg-card-light dark:bg-card-dark p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              >
+                <div
+                  class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-primary/10 dark:bg-primary/20"
+                >
+                  <span class="material-icons-outlined text-3xl text-primary">
                     spa
-                </span>
-</div>
-<h3 class="text-2xl font-semibold mb-3 text-text-light dark:text-text-dark">Sanar</h3>
-<p class="text-subtext-light dark:text-subtext-dark">Libera el estrés y las tensiones con herramientas y terapias diseñadas para tu recuperación.</p>
-</div>
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-<div class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-gradient-to-r from-secondary/10 to-primary/10 dark:from-secondary/20 dark:to-primary/20">
-<span class="material-icons-outlined text-3xl gradient-text">
+                  </span>
+                </div>
+                <h3
+                  class="text-2xl font-semibold mb-3 text-text-light dark:text-text-dark"
+                >
+                  Sanar
+                </h3>
+                <p class="text-subtext-light dark:text-subtext-dark">
+                  Libera el estrés y las tensiones con herramientas y terapias
+                  diseñadas para tu recuperación.
+                </p>
+              </div>
+              <div
+                class="bg-card-light dark:bg-card-dark p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              >
+                <div
+                  class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-gradient-to-r from-secondary/10 to-primary/10 dark:from-secondary/20 dark:to-primary/20"
+                >
+                  <span class="material-icons-outlined text-3xl gradient-text">
                     local_florist
-                </span>
-</div>
-<h3 class="text-2xl font-semibold mb-3 text-text-light dark:text-text-dark">Florecer</h3>
-<p class="text-subtext-light dark:text-subtext-dark">Desarrolla tu máximo potencial y cultiva una vida llena de propósito, alegría y plenitud.</p>
-</div>
-</div>
-</div>
-</section>
-<section
+                  </span>
+                </div>
+                <h3
+                  class="text-2xl font-semibold mb-3 text-text-light dark:text-text-dark"
+                >
+                  Florecer
+                </h3>
+                <p class="text-subtext-light dark:text-subtext-dark">
+                  Desarrolla tu máximo potencial y cultiva una vida llena de
+                  propósito, alegría y plenitud.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
           class="py-16 md:py-24 bg-background-light dark:bg-background-dark relative"
         >
           <div
@@ -130,7 +187,7 @@
                   <img
                     alt="Persona meditando en un entorno tranquilo"
                     class="rounded-lg shadow-xl w-full h-auto object-cover aspect-[4/3]"
-                    src="https://images.unsplash.com/photo-1612094264491-73d6c8758510?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1331"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuRNLFPC3NqzlWd0ZOV2V-pU0Si_hTYGKZRsBkl0fttTs0kobEX9ieNgBLPqDh5GlzF4lc-NCHe6DNOlefhaWi1C-T7EWhUWdOsPJJ6SjT5GjL0le3QSK3UQJtTgjg7w2nVk2D34b2okg_QtfB6s2U_KBZJ9aZBK2F8_CTD8WJOpaOm32CgPnzLY4G885KLuQOKfMIdVego6cYx8OQKJkcxMUKaH4gOe7knk3k_8zerN0NxaL2H8mz2H_GTdn7L_Awz6RIVeaDNqA"
                   />
                   <div
                     class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-secondary to-primary rounded-full opacity-30 blur-lg"
@@ -192,7 +249,7 @@
                 >
                   <div class="aspect-w-1 aspect-h-1">
                     <img
-                      alt="Planner Plena"
+                      alt="Agenda Planner Plena"
                       class="object-cover w-full h-full rounded-lg"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTR31c__qyna6Mp0xYtQtmZv2NeeQV0tYJPbPvqZHja99FJ_PxjIZKMWM_EJP_6onq80wFtdN1mxIemsPa6vsAYe26O6WrYhkloJR5aPJBJfHn7N-iEZ-RM8lACA_vJjnYiMD6L13Fvm-HV-lQ4GDuapAoJThTFlzrmlazfki0gotoCAYIpNENlfulO8EVjVfuXS77WGWFp53HwgkLVryL5nWCoGgujIZFlDRLRHLGU2ZYeTjlJm8k5KMG3wKppmobPBsiVIk9ebk"
                     />
@@ -201,7 +258,7 @@
                     class="absolute -bottom-4 -right-4 w-40 h-40 bg-card-light dark:bg-card-dark p-2 rounded-lg shadow-xl hidden sm:block"
                   >
                     <img
-                      alt="Detalle de Plena"
+                      alt="Detalle de la agenda Plena"
                       class="object-cover w-full h-full rounded"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_L0nDuK3cABix_ziz14Q3d2wKHFSVAxpXIWeS1Ijgsa-JyeM9cjXmY_YX43VaXeA7h9DbrdcX-FPAd_nciKDgHAfMhQn1XbBdZum_dqUiV0xqHTZAefP36TDWFed0RDug62dICxi3VGAxTo-n78-cOH91-2sbDaON5w4-RlxxybdGwWUfdzHlPmus69K09mI_iuOHlG7INdI3Jkl6oG4pLXrDu8SbtWv2iyVEMyKdDQuCKzUIEY8HFylxh4I07HfLlD2UgG42HMs"
                     />
@@ -216,7 +273,7 @@
                 <h2
                   class="text-4xl md:text-5xl font-bold mt-2 mb-4 text-text-light dark:text-text-dark"
                 >
-                  <span class="gradient-text">Plena</span>
+                  Agenda <span class="gradient-text">Plena</span>
                 </h2>
                 <p
                   class="text-lg text-subtext-light dark:text-subtext-dark mb-6"
@@ -251,10 +308,10 @@
                   </li>
                 </ul>
                 <div>
-                  <!-- <button
+                  <button
                     class="bg-primary text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-primary/30 hover:bg-opacity-90 transition-all transform hover:scale-105"
                   >
-                    Comprar ahora -->
+                    Comprar ahora
                   </button>
                   <a
                     class="ml-4 text-primary font-semibold hover:underline"
@@ -303,8 +360,12 @@
               class="hover:text-primary dark:hover:text-primary transition-colors"
               href="#"
               >Instagram</a
-            >          
-            
+            >
+            <a
+              class="hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >Twitter</a
+            >
           </div>
         </div>
       </footer>
