@@ -40,19 +40,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// Scroll suave personalizado y aún más lento para el botón "Quiero unirme!"
+// Scroll suave personalizado para todas las anclas de navegación
 document.addEventListener('DOMContentLoaded', function () {
-  const joinBtn = document.querySelector('a[href="#brevo-form"]');
-  if (joinBtn) {
-    joinBtn.addEventListener('click', function (e) {
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
-      const target = document.getElementById('brevo-form');
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      
       if (target) {
-        // Animación de scroll más lenta
+        // Animación de scroll suave y lenta
         const startY = window.scrollY;
         const endY = target.getBoundingClientRect().top + window.scrollY - 40;
-        const duration = 2200; // milisegundos (más lento)
+        const duration = 2200; // milisegundos (scroll lento)
         let startTime = null;
+        
         function animateScroll(currentTime) {
           if (!startTime) startTime = currentTime;
           const timeElapsed = currentTime - startTime;
@@ -65,5 +69,5 @@ document.addEventListener('DOMContentLoaded', function () {
         requestAnimationFrame(animateScroll);
       }
     });
-  }
+  });
 });
